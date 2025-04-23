@@ -1,0 +1,8 @@
+replicaCount: 3
+image:
+  repository: myregistry/exchange-api
+  tag: v1.2.0
+service:
+  port: 9000
+exchange:
+  endpoint: "https://api.exchange.com"

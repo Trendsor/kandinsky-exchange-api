@@ -1,0 +1,15 @@
+name: Exchange API CI
+on:
+  push:
+    paths:
+      - 'charts/exchange-api/**'
+      - 'src/**'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Go Tests
+        run: go test ./...
+      - name: Lint Helm Chart
+        run: helm lint charts/exchange-api
